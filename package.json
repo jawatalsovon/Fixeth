@@ -9,7 +9,14 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "type-check": "tsc --noEmit",
+    "setup": "bash scripts/setup.sh",
+    "dev:setup": "bash scripts/dev-setup.sh",
+    "seed": "ts-node scripts/seed-db.ts",
+    "migrate:apply": "bash scripts/migrate.sh apply",
+    "migrate:status": "bash scripts/migrate.sh status",
+    "migrate:reset": "bash scripts/migrate.sh reset"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.98.0",
@@ -28,16 +35,19 @@
     "react-dom": "19.2.4",
     "shadcn": "^4.8.1",
     "tailwind-merge": "^3.6.0",
-    "tw-animate-css": "^1.4.0"
+    "tw-animate-css": "^1.4.0",
+    "uuid": "^9.0.0"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "@types/uuid": "^9.0.0",
     "eslint": "^9",
     "eslint-config-next": "16.2.6",
     "tailwindcss": "^4",
+    "ts-node": "^10.9.0",
     "typescript": "^5"
   }
 }
